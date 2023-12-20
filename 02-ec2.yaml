@@ -1,6 +1,5 @@
 ---
 - name: Create EC2 Instance
-  hosts: all
   gather_facts: false
   vars:
     aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
@@ -23,7 +22,7 @@
        aws_access_key: "{{ aws_access_key }}"
        aws_secret_key: "{{ aws_secret_key }}"
        count: 1
-       register: ec2_instance
+      register: ec2_instance
 
     - name: Print EC2 instance details
       debug:
