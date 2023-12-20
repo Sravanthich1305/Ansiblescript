@@ -25,6 +25,6 @@
        count: 1
        register: ec2_instance
 
-- name: Print EC2 instance details
-  debug:
-      var: ec2_instance.instances[0].id
+    - name: Print EC2 instance details
+      debug:
+        var: ec2_instance.instances[0].id
