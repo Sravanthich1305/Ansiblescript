@@ -1,13 +1,30 @@
 - name: create ec2 vm
   become: yes
-  hosts: all
+  hosts: localhost
+  gather_facts: flase
+  vars:
+    aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
+    aws_secret_key: "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"
+    aws_region: "us-east-1"
+    instance_name: "MyEC2Instance"
+    instance_type: "t2.micro"
+    ami_id: "ami-03265a0778a880afb"  # Replace with your desired AMI ID
+    subnet_id: "subnet-0304c1248e3df710f"  # Replace with your subnet ID
+    security_group_ids: "sg-0ac6aa88529324f70"
   tasks:
-  -name: ec2
-   - ec2:
-      instance_type: t2.micro
-      image: ami-03265a0778a880afb
-      wait: yes
-      group: webserver
-      count: 1
-      vpc_subnet_id: subnet-0304c1248e3df710f
-      assign_public_ip: yes
+  - name: ec2
+  community.aws.ec2_instance:
+       name: "{{ instance_name }}"
+       instance_type: "{{ instance_type }}"
+       image_id: "{{ ami_id }}"
+       region: "{{ aws_region }}"
+       vpc_subnet_id: "{{ subnet_id }}"
+       security_group: "{{ security_group_ids }}"
+       aws_access_key: "{{ aws_access_key }}"
+       aws_secret_key: "{{ aws_secret_key }}"
+       count: 1
+       register: ec2_instance
+
+- name: Print EC2 instance details
+  debug:
+      var: ec2_instance.instances[0].id
