@@ -1,8 +1,7 @@
 ---
 - name: create ec2 vm
-  become: yes
   hosts: localhost
-  gather_facts: flase
+  gather_facts: false
   vars:
     aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
     aws_secret_key: "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"
