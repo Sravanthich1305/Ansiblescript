@@ -1,6 +1,6 @@
 ---
 - name: Create EC2 Instance
-  hosts: localhost
+  hosts: all
   gather_facts: false
   vars:
     aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
