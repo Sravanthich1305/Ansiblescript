@@ -1,6 +1,5 @@
 ##Create the instance using ansible yaml playbook
 - name: ping
-  author: SRAVANTHI
   become: yes
   hosts: test
   tasks:
