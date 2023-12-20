@@ -1,0 +1,13 @@
+- name: create ec2 vm
+  become: yes
+  hosts: all
+  tasks:
+  -name: ec2vm
+     - ec2:
+            instance_type: t2.micro
+            image: ami-03265a0778a880afb
+            wait: yes
+            group: webserver
+            count: 1
+            vpc_subnet_id: subnet-0304c1248e3df710f
+            assign_public_ip: yes
