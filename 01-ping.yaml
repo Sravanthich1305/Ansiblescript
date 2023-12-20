@@ -1,0 +1,9 @@
+##Create the instance using ansible yaml playbook
+- name: ping
+  author: Sravanthi
+  become: yes
+  host: test
+  tasks:
+  - name: ping to the server
+    ansible.builtin.ping:
+    
