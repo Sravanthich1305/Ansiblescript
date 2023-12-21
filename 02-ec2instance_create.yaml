@@ -3,8 +3,8 @@
   hosts: localhost
   tasks:
     - ec2_instance:
-        aws_access_key: AKIAZTSX3HCHK4YZZ6T4
-        aws_secret_key: 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
+        aws_access_key: AKIAZTSX3HCHI26QRZ4W
+        aws_secret_key: Sd5xEKr0YByNIV0RVBEZletG/hwuXj5/ca1Kmqei
         region: us-east-1
         instance_type: t2.micro
         image_id: ami-03265a0778a880afb # Replace with your desired AMI ID
