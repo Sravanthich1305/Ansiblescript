@@ -2,6 +2,6 @@
   hosts: localhost
   become: yes
   vars:
-    username:  "Tanvi"
+    username:"TANVI"
   ansible.builtin.debug:
     msg: "hi {{username}}"
