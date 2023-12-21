@@ -1,0 +1,19 @@
+---
+- name: Create EC2 Instance
+  hosts: localhost
+  tasks:
+    - ec2_instance:
+        aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
+        aws_secret_key: "7GnGdPvNy/rbHZsFSTWPBnwEpFDFZ//9STAnmJKl"
+        aws_region: "us-east-1"
+        instance_type: "t2.micro"
+        ami_id: "ami-03265a0778a880afb"  # Replace with your desired AMI ID
+        count: 1
+        wait: yes
+        tags:
+          name: firstvm
+        vpc_subnet_id: subnet-0304c1248e3df710f
+        network:
+            assing_pulic_ip: true
+        security_group_ids: "sg-0ac6aa88529324f70"
+
