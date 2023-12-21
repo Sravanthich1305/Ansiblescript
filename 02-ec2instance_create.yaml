@@ -3,17 +3,17 @@
   hosts: localhost
   tasks:
     - ec2_instance:
-        aws_access_key: "AKIAZTSX3HCHK4YZZ6T4"
-        aws_secret_key: "7GnGdPvNy/rbHZsFSTWPBnwEpFDFZ//9STAnmJKl"
-        region: "us-east-1"
-        instance_type: "t2.micro"
-        image_id: "ami-03265a0778a880afb"  # Replace with your desired AMI ID
+        aws_access_key: AKIAZTSX3HCHK4YZZ6T4
+        aws_secret_key: 7GnGdPvNy/rbHZsFSTWPBnwEpFDFZ//9STAnmJKl
+        region: us-east-1
+        instance_type: t2.micro
+        image_id: ami-03265a0778a880afb # Replace with your desired AMI ID
         count: 1
         wait: yes
         tags:
           name: firstvm
         vpc_subnet_id: subnet-0304c1248e3df710f
         network:
-            assing_pulbic_ip: true
-        security_group: "sg-0ac6aa88529324f70"
+            assing_public_ip: true
+        security_group: Allow-Hosts
 
