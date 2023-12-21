@@ -4,4 +4,4 @@
   vars:
     username:  "Tanvi"
   ansible.builtin.debug:
-    msg: "Hi {{username}}"
+    msg: "hi {{username}}"
